@@ -48,7 +48,6 @@ app.put("/repositories/:id", (request, response) => {
 app.delete("/repositories/:id", (request, response) => {
   const { id } = request.params
   const repositoryIndex = repositories.findIndex(r => r.id === id)
-  const repository = repositories[repositoryIndex]
 
   if (repositoryIndex < 0) {
     return response.status(400).json({ error: 'Repositoy not found' })
